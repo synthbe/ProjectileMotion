@@ -4,7 +4,7 @@ import os
 
 TABLES_DIR: str = r'./data'
 
-def read_tables(tables_dir=TABLES_DIR) -> list[pd.DataFrame]:
+def read_tables(tables_dir=TABLES_DIR) -> pd.DataFrame:
     """
     Reads data directory with all the tables and concate them
     """
