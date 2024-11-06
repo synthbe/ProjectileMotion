@@ -22,3 +22,4 @@ The outputs will be stored in te results directory, with the name of the model
 * API automation to read the data
 * Automation tests
 * Deploy the models
+* Check SciMl
