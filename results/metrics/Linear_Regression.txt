@@ -1,3 +1,3 @@
-Root Mean Squared Error: 0.87 | R2: 0.98
-coef -> [[-0.00689328  0.98632284]]
-bias -> [-0.00373088]
+Root Mean Squared Error: 1.07 | R2: 0.98
+coef -> [[-0.01113808  0.99715826]]
+bias -> [-5.19776549e-16]

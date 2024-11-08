@@ -6,8 +6,9 @@ TABLES_DIR: str = r'./data'
 
 def read_tables(tables_dir=TABLES_DIR) -> pd.DataFrame:
     """
-    Reads data directory with all the tables and concate them
+    Reads data directory with all the tables, concate them and returns ad a pandas DataFrame
     """
+
     tables_file: list = glob.glob(os.path.join(tables_dir, "*.csv"))
     dfs: list = [pd.read_csv(file, sep=', ', engine='python') for file in tables_file]
     df_combined = pd.concat(dfs, ignore_index=True)
