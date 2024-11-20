@@ -2,3 +2,4 @@
 src/__pycache__/
 src/models/__pycache__/
 data/
+results/models/* # For now in development
