@@ -9,7 +9,6 @@ from ..save_model import save_model
 
 preprocesser = Preprocesser(StandardScaler)
 
-
 if __name__ == "__main__":
     df = read_tables()
     tidy_df, X, y = preprocesser.preprocess_data(df)
@@ -19,11 +18,10 @@ if __name__ == "__main__":
 
     poly = PolynomialFeatures(degree=2, include_bias=True)
     X_train_scaled_poly = poly.fit_transform(X_train_scaled)
-    
 
     model = LinearRegression()
     model.fit(X_train_scaled_poly, y_train_scaled)
-    
+
     X_scaled = preprocesser.transform_features(X)
     X_test_scaled = preprocesser.transform_features(X_test)
     X_scaled_poly = poly.transform(X_scaled)

@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     model = LinearRegression()
     model.fit(X_train_scaled, y_train_scaled)
-    
+
     X_scaled = preprocesser.transform_features(X)
     X_test_scaled = preprocesser.transform_features(X_test)
 

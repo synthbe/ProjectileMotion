@@ -4,16 +4,15 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-skops = "*"
 scikit-learn = "*"
-pandas = "*"
-matplotlib = "*"
-numpy = "*"
 tensorflow = "*"
+matplotlib = "*"
 seaborn = "*"
+pandas = "*"
+numpy = "*"
 
 [dev-packages]
-ipykernel = "*"
+pytest = "*"
 
 [requires]
 python_version = "3.11"
