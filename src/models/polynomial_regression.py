@@ -12,4 +12,7 @@ polynomial_regression_preprocessing = ColumnTransformer([
 ])
 
 if __name__ == "__main__":
-    execute_pipeline(LinearRegression, polynomial_regression_preprocessing, "Polynomial_Regression_pipe")
+    execute_pipeline(
+        LinearRegression, polynomial_regression_preprocessing, "Polynomial_Regression_pipe",
+        postive=True,
+    )

@@ -7,7 +7,7 @@ from .load_data import read_tables, tidy_and_split_data
 from .evaluate_model import evaluate_model, plot_curve
 from .save_model import save_model
 
-def execute_pipeline(model: BaseEstimator, model_preprocessing: ColumnTransformer, model_name: str) -> None:
+def execute_pipeline(model: BaseEstimator, model_preprocessing: ColumnTransformer, model_name: str, **kwargs) -> None:
     df = read_tables()
     tidy_df, X, y = tidy_and_split_data(df)
 
@@ -16,7 +16,7 @@ def execute_pipeline(model: BaseEstimator, model_preprocessing: ColumnTransforme
     pipe = Pipeline(
         steps=[
             ("preprocessing", model_preprocessing),
-            (model_name, model())
+            (model_name, model(**kwargs))
         ]
     )
 

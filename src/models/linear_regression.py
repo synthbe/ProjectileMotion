@@ -8,4 +8,7 @@ cols = [0, 1]
 linear_regression_preprocessing = ColumnTransformer([("scaler", StandardScaler(), cols)])
 
 if __name__ == "__main__":
-    execute_pipeline(LinearRegression, linear_regression_preprocessing, "Linear_Regression_pipe")
+    execute_pipeline(
+        LinearRegression, linear_regression_preprocessing, "Linear_Regression_pipe",
+        positive=True,
+    )

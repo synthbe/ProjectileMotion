@@ -18,8 +18,10 @@ def evaluate_model(y_test: FloatArray, y_pred: FloatArray, model_name: str, **kw
     os.makedirs(RESULTS_DIR, exist_ok=True)
 
     with open(file, 'w') as f:
-        f.write(f"Root Mean Squared Error: {rmse:.2f} | R2: {r2:.2f}\n")
-        [f.write(f"{key} -> {value}\n") for key, value in kwargs.items()]
+        f.write("Metrics:\n")
+        f.write(f"\tRoot Mean Squared Error: {rmse:.2f} | R2: {r2:.2f}\n")
+        f.write("Model attributes\n")
+        [f.write(f"\t{key} -> {value}\n") for key, value in kwargs.items()]
 
 def plot_curve(data: DataFrame, y_true: FloatArray, y_pred: FloatArray, model_name: str) -> None:
     sns.lineplot(x=data.H.values, y=y_pred, label=model_name)

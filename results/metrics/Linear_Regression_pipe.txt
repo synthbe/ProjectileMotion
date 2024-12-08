@@ -1,0 +1,20 @@
+Metrics:
+	Root Mean Squared Error: 0.95 | R2: 0.98
+Model attributes
+	coef_ -> [-0.05897125  6.98191791]
+	copy_X -> True
+	fit -> <bound method LinearRegression.fit of LinearRegression()>
+	fit_intercept -> True
+	get_metadata_routing -> <bound method _MetadataRequester.get_metadata_routing of LinearRegression()>
+	get_params -> <bound method BaseEstimator.get_params of LinearRegression()>
+	intercept_ -> 25.76121428571429
+	n_features_in_ -> 2
+	n_jobs -> None
+	positive -> False
+	predict -> <bound method LinearModel.predict of LinearRegression()>
+	rank_ -> 2
+	score -> <bound method RegressorMixin.score of LinearRegression()>
+	set_fit_request -> <function RequestMethod.__get__.<locals>.func at 0x000002607992CFE0>
+	set_params -> <bound method BaseEstimator.set_params of LinearRegression()>
+	set_score_request -> <function RequestMethod.__get__.<locals>.func at 0x000002607992CCC0>
+	singular_ -> [20.39698623 11.99845626]
