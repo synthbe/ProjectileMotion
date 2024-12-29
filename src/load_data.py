@@ -20,7 +20,7 @@ def read_tables(tables_dir: str=TABLES_DIR) -> pd.DataFrame:
 
     return df_combined
 
-def tidy_and_split_data(df: DataFrame) -> Tuple[DataFrame, FloatArray, FloatArray]:
+def tidy_and_split_data(df: DataFrame, dropna: bool=True) -> Tuple[DataFrame, FloatArray, FloatArray]:
     """
     Returns the dataframe as tidy pattern and splited
     """
@@ -28,7 +28,8 @@ def tidy_and_split_data(df: DataFrame) -> Tuple[DataFrame, FloatArray, FloatArra
     tidy_df = df.melt(id_vars=['h'], var_name='H', value_name='R')
     tidy_df = tidy_df.map(float).sort_values(by='H')
     tidy_df.sample(frac=1)
-    tidy_df.dropna(inplace=True)
+    if dropna:
+        tidy_df.dropna(inplace=True)
 
     X = tidy_df.drop(columns=['R'])
     y = tidy_df.R
