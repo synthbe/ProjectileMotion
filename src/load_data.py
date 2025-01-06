@@ -5,6 +5,8 @@ from numpy import typing, float64
 import glob
 import os
 
+from .data_generator import generate_data
+
 FloatArray: TypeAlias = typing.NDArray[float64]
 
 TABLES_DIR: str = r'./data'
@@ -27,7 +29,6 @@ def tidy_and_split_data(df: DataFrame, dropna: bool=True) -> Tuple[DataFrame, Fl
 
     tidy_df = df.melt(id_vars=['h'], var_name='H', value_name='R')
     tidy_df = tidy_df.map(float).sort_values(by='H')
-    tidy_df.sample(frac=1)
     if dropna:
         tidy_df.dropna(inplace=True)
 
@@ -35,3 +36,9 @@ def tidy_and_split_data(df: DataFrame, dropna: bool=True) -> Tuple[DataFrame, Fl
     y = tidy_df.R
 
     return tidy_df, X.values, y.values
+
+def fill_missing_data(tidy_df: pd.DataFrame) -> pd.DataFrame:
+    filled_df = tidy_df.copy()
+    filled_df['R'] = filled_df.apply(lambda row: generate_data(row,), axis=1)
+
+    return filled_df
